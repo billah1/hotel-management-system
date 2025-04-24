@@ -8,73 +8,25 @@
              </div>
           </div>
        </div>
+     
        <div class="row">
-          <div class="col-md-4 col-sm-6">
-             <div id="serv_hover"  class="room">
-                <div class="room_img">
-                   <figure><img src="{{ asset('/') }}fronts/images/room1.jpg" alt="#"/></figure>
-                </div>
-                <div class="bed_room">
-                   <h3>Bed Room</h3>
-                   <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there </p>
-                </div>
-             </div>
-          </div>
-          <div class="col-md-4 col-sm-6">
-             <div id="serv_hover"  class="room">
-                <div class="room_img">
-                   <figure><img src="{{ asset('/') }}fronts/images/room2.jpg" alt="#"/></figure>
-                </div>
-                <div class="bed_room">
-                   <h3>Bed Room</h3>
-                   <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there </p>
-                </div>
-             </div>
-          </div>
-          <div class="col-md-4 col-sm-6">
-             <div id="serv_hover"  class="room">
-                <div class="room_img">
-                   <figure><img src="{{ asset('/') }}fronts/images/room3.jpg" alt="#"/></figure>
-                </div>
-                <div class="bed_room">
-                   <h3>Bed Room</h3>
-                   <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there </p>
-                </div>
-             </div>
-          </div>
-          <div class="col-md-4 col-sm-6">
-             <div id="serv_hover"  class="room">
-                <div class="room_img">
-                   <figure><img src="{{ asset('/') }}fronts/images/room4.jpg" alt="#"/></figure>
-                </div>
-                <div class="bed_room">
-                   <h3>Bed Room</h3>
-                   <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there </p>
-                </div>
-             </div>
-          </div>
-          <div class="col-md-4 col-sm-6">
-             <div id="serv_hover"  class="room">
-                <div class="room_img">
-                   <figure><img src="{{ asset('/') }}fronts/images/room5.jpg" alt="#"/></figure>
-                </div>
-                <div class="bed_room">
-                   <h3>Bed Room</h3>
-                   <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there </p>
-                </div>
-             </div>
-          </div>
-          <div class="col-md-4 col-sm-6">
-             <div id="serv_hover"  class="room">
-                <div class="room_img">
-                   <figure><img src="{{ asset('/') }}fronts/images/room6.jpg" alt="#"/></figure>
-                </div>
-                <div class="bed_room">
-                   <h3>Bed Room</h3>
-                   <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there </p>
-                </div>
-             </div>
-          </div>
-       </div>
+         @foreach($room as $rooms )
+         <div class="col-md-4 col-sm-6">
+            <div id="serv_hover"  class="room">
+               <div class="room_img">
+                  <figure><img style="height: 200px; width: 320px;" src="{{ asset('room/'.$rooms->image) }}" alt="#"/></figure>
+               </div>
+               <div class="bed_room">
+                  <h3>{{ $rooms->room_title }}</h3>
+                  <p style="padding: 10px">{!! Str::limit($rooms->description, 100) !!}</p>
+
+                  <a href="{{ url('details_room',$rooms->id) }}" class="btn btn-primary">Room Detail</a>
+               </div>
+            </div>
+         </div>
+         @endforeach
+      </div>
+      
+       
     </div>
  </div>

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,9 @@ use App\Http\Controllers\AdminController;
 // });
 
 Route::get('/',[AdminController::class,'home']);
+Route::get('/details_room/{id}',[HomeController::class,'detailsRoom']);
+Route::post('/add_booking/{id}',[HomeController::class,'addBooking']);
+
 
 //Route::middleware([
 //    'auth:sanctum',
@@ -38,3 +42,12 @@ Route::get('/view_room',[AdminController::class,'viewRoom']);
 Route::get('/delete_room/{id}',[AdminController::class,'deleteRoom']);
 Route::get('/edit_room/{id}',[AdminController::class,'editRoom']);
 Route::post('/update_room/{id}',[AdminController::class,'updateRoom']);
+
+//booking status 
+
+Route::get('/bookings',[AdminController::class,'bookings']);
+Route::get('/delete_booking/{id}',[AdminController::class,'deleteBookings']);
+Route::get('/approve_booking/{id}',[AdminController::class,'approveBookings']);
+Route::get('/reject_booking/{id}',[AdminController::class,'rejectBookings']);
+
+
