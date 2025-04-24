@@ -31,3 +31,10 @@ Route::get('/',[AdminController::class,'home']);
 //});
 
 Route::get('/home',[AdminController::class,'index'])->name('home');
+
+Route::get('/create_room',[AdminController::class,'createRoom']);
+Route::post('/store',[AdminController::class,'storeRoom']);
+Route::get('/view_room',[AdminController::class,'viewRoom']);
+Route::get('/delete_room/{id}',[AdminController::class,'deleteRoom']);
+Route::get('/edit_room/{id}',[AdminController::class,'editRoom']);
+Route::post('/update_room/{id}',[AdminController::class,'updateRoom']);
