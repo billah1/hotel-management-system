@@ -29,18 +29,20 @@
                       <li class="nav-item">
                          <a class="nav-link" href="gallery.html">Gallery</a>
                       </li>
-                      <li class="nav-item">
+                      {{-- <li class="nav-item">
                          <a class="nav-link" href="blog.html">Blog</a>
-                      </li>
+                      </li> --}}
                       <li class="nav-item">
                          <a class="nav-link" href="contact.html">Contact Us</a>
                       </li>
                       
                    
                      @if (Route::has('login'))
-                     <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
+                    
                          @auth
-                             <a href="{{ url('/home') }}" class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
+                         <x-app-layout>
+
+                         </x-app-layout>
                          @else
                          <li class="nav-item" style="padding-right: 10px">
                             <a class="btn btn-success" href="{{ url('login') }}">Login</a>
@@ -53,7 +55,7 @@
         
                              @endif
                          @endauth
-                     </div>
+                     
                  @endif
                    </ul>
                 </div>
