@@ -21,6 +21,8 @@
               </ul>
             </li>
             <li class="active"><a href="{{ url('bookings') }}"> <i class="icon-home"></i>Bookings</a></li>
+            <li class="active"><a href="{{ url('view_gallary') }}"> <i class="icon-home"></i>Gallary</a></li>
+            <li class="active"><a href="{{ url('all_messages') }}"> <i class="icon-home"></i>Message</a></li>
             {{-- <li><a href="login.html"> <i class="icon-logout"></i>Login page </a></li>
     </ul><span class="heading">Extras</span>
     <ul class="list-unstyled">

@@ -30,7 +30,7 @@
                   </div>
                   <div class="block-body">
                     <form action="{{ url('store') }}" method="POST"  enctype="multipart/form-data">
-                    @csrf
+                       @csrf
                       <div class="form-group">
                         <label for="room_title" class="form-control-label">Room Title</label>
                         <input type="text" id="room_title" name="room_title" placeholder="Room Title" class="form-control" >
